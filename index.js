@@ -33,14 +33,11 @@ const questionsDatabase = [{
 }]
 
 // the highscore
-const highScore = [{
-  name: "Parth",
-  score: 8
-},
-{
-  name: "Diksha",
-  score: 7
-}]
+const highScore = [
+  {
+    name: "Diksha",
+    score: 0
+  }]
 
 
 let score = 0
@@ -65,3 +62,12 @@ for (let question of questionsDatabase) {
 }
 
 console.log(`Your Final Score is: ${score}`)
+console.log("----------------------")
+
+if (score > highScore[0].score) {
+  console.log(`Congratulation!! You Broke the Highscore of ${highScore[0].name}, and now you are on the top of our leaderboard.`)
+  highScore[0] = {
+    name: userName,
+    score: score
+  }
+}
